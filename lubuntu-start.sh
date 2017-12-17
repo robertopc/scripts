@@ -3,9 +3,6 @@
 # This script is for first use in environment Lubuntu Desktop
 # It install and configure my main softwares and configs
 
-# Add Albert App Launcher to sources list
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/albert.list"
-
 USER=`whoami`
 
 sudo apt-get install git $PARAMS -qq
@@ -87,8 +84,8 @@ sudo apt-get install gist $PARAMS		# cli gist
 sudo apt-get install albert $PARAMS		# app launcher
 
 # Cerebro App Launcher
-# wget https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
-# sudo dpkg -i cerebro_0.3.1_amd64.deb
+wget https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
+sudo dpkg -i cerebro_0.3.1_amd64.deb
 
 # Steam
 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
