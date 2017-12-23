@@ -64,6 +64,7 @@ sudo apt-get install mysql-server -y -qq	# mysql
 sudo apt-get install nodejs -y -qq		# nodejs
 sudo apt-get install npm -y -qq		        # nodejs package manager
 sudo apt-get install python3-pip -y -qq		# python3 package manager
+sudo apt-get install python3-virtualenv -y -qq	# python3 virtual environment
 
 sudo apt-get install cheese -y -qq		# webcam
 sudo apt-get install gparted -y -qq		# disk partitions editor
