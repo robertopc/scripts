@@ -40,6 +40,7 @@ sudo apt-get install espeak -y -qq		# cli audio synthetizer
 sudo apt-get install httpie -y -qq		# CLI, cURL-like tool for humans
 sudo apt-get install multitail -y -qq		# clie multi tail
 sudo apt-get install inxi -y -qq		# show hardware information
+sudo apt-get install screenfetch -y -qq # The Bash Screenshot Information Tool
 sudo apt-get install rar -y -qq			# rar
 
 echo "Installing Browsers..."
