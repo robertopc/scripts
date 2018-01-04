@@ -3,9 +3,6 @@
 # This script is for first use in environment Lubuntu Desktop
 # It install and configure my main softwares and configs
 
-USER=`whoami`
-HOME="/home/$USER"
-
 cd ~
 mkdir github
 cd github
@@ -62,10 +59,20 @@ sudo apt-get install php7.0 -y -qq		# php7
 sudo apt-get install php7.0-cli -y -qq		# php7 for cli
 sudo apt-get install php7.0-curl -y -qq		# php7 curl lib
 sudo apt-get install mysql-server -y -qq	# mysql
-sudo apt-get install nodejs -y -qq		# nodejs
-sudo apt-get install npm -y -qq		        # nodejs package manager
 sudo apt-get install python3-pip -y -qq		# python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	# python3 virtual environment
+# install current nodejs
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install nodejs -y -qq
+
+# install linux brew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+# add linuxbrew to path
+test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
+echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
 
 sudo apt-get install cheese -y -qq		# webcam
 sudo apt-get install gparted -y -qq		# disk partitions editor
@@ -90,6 +97,8 @@ sudo apt-get install mediainfo-gui -y -qq	# media-info graphical
 sudo apt-get install screenkey -y -qq		# screencast keys
 sudo apt-get install vokoscreen -y -qq		# screencast
 sudo apt-get install font-manager -y -qq	# font manager
+
+sudo apt-get install lynx -y -qq # require funcoeszz
 
 # Cerebro App Launcher
 wget https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
