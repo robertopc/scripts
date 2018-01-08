@@ -61,9 +61,18 @@ sudo apt-get install php7.0-curl -y -qq		# php7 curl lib
 sudo apt-get install mysql-server -y -qq	# mysql
 sudo apt-get install python3-pip -y -qq		# python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	# python3 virtual environment
+
+# pip packages
+sudo pip3 install asciinema
+sudo pip3 install virtualenvwrapper
+
 # install current nodejs
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install nodejs -y -qq
+
+# npm packages
+sudo npm install -g gitbook-cli
+sudo npm install -g sub-tv
 
 # install linux brew
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
@@ -73,6 +82,10 @@ test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
 echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
+
+# brew packages
+sudo brew install hub
+sudo brew install hello
 
 sudo apt-get install cheese -y -qq		# webcam
 sudo apt-get install gparted -y -qq		# disk partitions editor
