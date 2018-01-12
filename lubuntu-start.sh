@@ -3,6 +3,10 @@
 # This script is for first use in environment Lubuntu Desktop
 # It install and configure my main softwares and configs
 
+# read -p "Skip? (y/N) " SKIP
+# if [ $SKIP != "y" ]; then
+# fi
+
 cd ~
 mkdir github
 cd github
@@ -121,14 +125,11 @@ sudo dpkg -i cerebro_0.3.1_amd64.deb
 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
 sudo dpkg -i steam.deb
 
-# Netbeans IDE 8.1
-# wget http://download.netbeans.org/netbeans/8.1/final/bundles/netbeans-8.1-php-linux-x64.sh
-# chmod +x netbeans-8.1-php-linux-x64.sh
-# ./netbeans-8.1-php-linux-x64.sh
+# Netbeans IDE 8.2
+bash install-netbeans.sh
 
 # Pycharm IDE
-# wget https://download.jetbrains.com/python/pycharm-community-2017.2.3.tar.gz
-# tar xzf pycharm-community-2017.2.3.tar.gz
+bash install-pycharm.sh
 
 # Atom IDE
 # wget https://atom.io/download/deb
