@@ -3,8 +3,8 @@
 # This script is for first use in environment Lubuntu Desktop
 # It install and configure my main softwares and configs
 
-# read -p "Skip? (y/N) " SKIP
-# if [ $SKIP != "y" ]; then
+# read -p "Skip? (Y/n) " SKIP
+# if [ $SKIP == "n" ]; then
 # fi
 
 cd ~
@@ -13,8 +13,8 @@ cd github
 git clone git@github.com:/robertopc/dotfiles
 git clone git@github.com:/robertopc/scripts
 
-ln -s $HOME/github/dotfiles ~
-ln -s $HOME/github/scripts ~
+ln -s ~/github/dotfiles ~
+ln -s ~/github/scripts ~
 
 cd ~
 
@@ -22,27 +22,28 @@ cd ~
 git clone git@github.com:/robertopc/fontes
 
 # Link Dotfiles
-find $HOME/github/dotfiles/ -type f -name .* -exec ln -s {} ~ \; # mk symlinks
+find ~/github/dotfiles/ -type f -name '.*' -exec ln -s {} ~/ \; # mk symlinks
 
 # Link Fonts
 ln -s fontes .fonts
 
 # Cli apps
 echo "Installing CLI apps..."
-sudo apt-get install pulseaudio -y -qq		# audio
-sudo apt-get install htop -y -qq		# cli top improved
-sudo apt-get install vim -y -qq			# cli vi improved
-sudo apt-get install mutt -y -qq		# cli email client
-sudo apt-get install w3m -y -qq			# cli web browser
-sudo apt-get install cmus -y -qq	  	# cli music player
-sudo apt-get install mpv -y -qq			# cli media player
-sudo apt-get install gist -y -qq		# cli gist
-sudo apt-get install espeak -y -qq		# cli audio synthetizer
-sudo apt-get install httpie -y -qq		# CLI, cURL-like tool for humans
-sudo apt-get install multitail -y -qq		# clie multi tail
-sudo apt-get install inxi -y -qq		# show hardware information
-sudo apt-get install screenfetch -y -qq # The Bash Screenshot Information Tool
-sudo apt-get install rar -y -qq			# rar
+sudo apt-get install pulseaudio -y -qq	    # audio
+sudo apt-get install htop -y -qq	    # top improved
+sudo apt-get install vim -y -qq		    # vi improved
+sudo apt-get install mutt -y -qq	    # email client
+sudo apt-get install w3m -y -qq		    # web browser
+sudo apt-get install cmus -y -qq	    # music player
+sudo apt-get install mpv -y -qq		    # media player
+sudo apt-get install gist -y -qq	    # gist
+sudo apt-get install espeak -y -qq	    # audio synthetizer
+sudo apt-get install httpie -y -qq	    # cURL-like tool for humans
+sudo apt-get install multitail -y -qq	    # multi tail
+sudo apt-get install inxi -y -qq	    # show hardware information
+sudo apt-get install screenfetch -y -qq	    # The Bash Screenshot Information Tool
+sudo apt-get install rar -y -qq		    # rar
+sudo apt-get install build-essential -y -qq # build tools
 
 echo "Installing Browsers..."
 sudo apt-get install firefox -y -qq		# web browser
@@ -65,6 +66,14 @@ sudo apt-get install php7.0-curl -y -qq		# php7 curl lib
 sudo apt-get install mysql-server -y -qq	# mysql
 sudo apt-get install python3-pip -y -qq		# python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	# python3 virtual environment
+
+# ruby-install
+wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz
+tar -xzvf ruby-install-0.6.1.tar.gz
+cd ruby-install-0.6.1/
+sudo make install
+ruby-install --latest ruby
+cd ..
 
 # pip packages
 sudo pip3 install asciinema
@@ -118,11 +127,11 @@ sudo apt-get install font-manager -y -qq	# font manager
 sudo apt-get install lynx -y -qq # require funcoeszz
 
 # Cerebro App Launcher
-wget https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
+curl https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
 sudo dpkg -i cerebro_0.3.1_amd64.deb
 
 # Steam
-wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+curl https://steamcdn-a.akamaihd.net/client/installer/steam.deb
 sudo dpkg -i steam.deb
 
 # Netbeans IDE 8.2
