@@ -123,6 +123,8 @@ sudo apt-get install mediainfo-gui -y -qq	# media-info graphical
 sudo apt-get install screenkey -y -qq		# screencast keys
 sudo apt-get install vokoscreen -y -qq		# screencast
 sudo apt-get install font-manager -y -qq	# font manager
+sudo apt-get install keepassx -y -qq		# password manager
+sudo apt-get install kpcli -y -qq		# keepassx cli
 
 sudo apt-get install lynx -y -qq # require funcoeszz
 
