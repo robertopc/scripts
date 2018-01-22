@@ -137,10 +137,10 @@ curl https://steamcdn-a.akamaihd.net/client/installer/steam.deb
 sudo dpkg -i steam.deb
 
 # Netbeans IDE 8.2
-bash install-netbeans.sh
+bash ~/scripts/install-netbeans.sh
 
 # Pycharm IDE
-bash install-pycharm.sh
+bash ~/scripts/install-pycharm.sh
 
 # Atom IDE
 # wget https://atom.io/download/deb

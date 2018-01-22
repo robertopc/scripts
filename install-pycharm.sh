@@ -16,7 +16,7 @@ if [ $RESPOSTA == 'y' ]; then
       SUMCHECK=`sha256sum -c $FILENAME.sha256`
       echo $SUMCHECK
       # verifica a integridade do arquivo
-      if [ "$SUMCHECK" == "$FILENAME: SUCESSO" ]; then
+      if [ "$SUMCHECK" == "$FILENAME: SUCESSO" ] || [ "$SUMCHECK" == "$FILENAME: OK" ]; then
         break
       fi
     fi
