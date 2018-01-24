@@ -1,0 +1,21 @@
+# How To Secure Apache with Let's Encrypt on Ubuntu 14.04
+
+# Step 1 Download the Let's Encrypt Client
+cd /usr/local/sbin
+sudo wget https://dl.eff.org/certbot-auto
+sudo chmod a+x /usr/local/sbin/certbot-auto
+
+# Step 2 Set Up the SSL Certificate
+certbot-auto --apache -d example.com -d www.example.com
+
+# Check if works
+https://www.ssllabs.com/ssltest/analyze.html?d=example.com&latest
+
+# Step 3 Set Up Auto Renewal
+certbot-auto renew
+sudo crontab -e
+
+30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log
+
+
+
