@@ -13,6 +13,9 @@ cd github
 git clone git@github.com:/robertopc/dotfiles
 git clone git@github.com:/robertopc/scripts
 
+# instalo o vundle para o vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 ln -s ~/github/dotfiles ~
 ln -s ~/github/scripts ~
 
