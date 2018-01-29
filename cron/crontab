@@ -6,19 +6,19 @@
 #  |  |  |   |   |
 #  m  h dom mon dow
 MAILTO=robertopc.prog@gmail.com
-* * * * * /home/roberto/github/cron/every-minute.sh
-0 0 * * * /home/roberto/github/cron/every-midnight.sh
-0 12 * * * /home/roberto/github/cron/every-midday.sh
-*/15 * * * * /home/roberto/github/cron/every-15-minutes.sh
-*/30 * * * * /home/roberto/github/cron/every-30-minutes.sh
-0 *0/12 * * * /home/roberto/github/cron/twice-daily.sh
-0 */8 * * * /home/roberto/github/cron/thrice-daily.sh
-0 0 */3 * * /home/roberto/github/cron/every-3-days-at-midnight.sh
-0 0 1 * * /home/roberto/github/cron/every-month.sh
-0 0 1 */3 * /home/roberto/github/cron/every-3-months.sh
-@hourly echo "@hourly run at `date`" >> ~/cron.log
-@daily echo "@daily run at `date`" >> ~/cron.log
-@reboot echo "@reboot run at `date`" >> ~/cron.log
+* * * * * root /home/roberto/github/scripts/cron/every-minute.sh
+0 0 * * * root /home/roberto/github/scripts/cron/every-midnight.sh
+0 12 * * * root /home/roberto/github/scripts/cron/every-midday.sh
+*/15 * * * * root /home/roberto/github/scripts/cron/every-15-minutes.sh
+*/30 * * * * root /home/roberto/github/scripts/cron/every-30-minutes.sh
+0 *0/12 * * * root /home/roberto/github/scripts/cron/twice-daily.sh
+0 */8 * * * root /home/roberto/github/scripts/cron/thrice-daily.sh
+0 0 */3 * * root /home/roberto/github/scripts/cron/every-3-days-at-midnight.sh
+0 0 1 * * root /home/roberto/github/scripts/cron/every-month.sh
+0 0 1 */3 * root /home/roberto/github/scripts/cronevery-3-months.sh
+@hourly root echo "@hourly run at `date`" >> ~/cron.log
+@daily root echo "@daily run at `date`" >> ~/cron.log
+@reboot root echo "@reboot run at `date`" >> ~/cron.log
 @monthly echo "@monthly run at `date`" >> ~/cron.log
 @weekly echo "@weekly run at `date`" >> ~/cron.log
 @yearly echo "@yearly run at `date`" >> ~/cron.log
