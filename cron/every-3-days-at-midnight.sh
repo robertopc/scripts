@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "${0##*/} run at `date`" >> /home/roberto/cron.log
+echo "${0##*/} run at `date`" >> cron.log
 
