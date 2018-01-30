@@ -7,9 +7,9 @@
 #  m  h dom mon dow
 SHELL=/bin/bash
 MAILTO=robertopc.prog@gmail.com
-* * * * * sh /home/roberto/github/scripts/cron/every-minute.sh
-0 0 * * * sh /home/roberto/github/scripts/cron/every-midnight.sh
-0 12 * * * sh /home/roberto/github/scripts/cron/every-midday.sh
+* * * * * /home/roberto/github/scripts/cron/every-minute.sh
+0 0 * * * /home/roberto/github/scripts/cron/every-midnight.sh
+0 12 * * * /home/roberto/github/scripts/cron/every-midday.sh
 */15 * * * * /home/roberto/github/scripts/cron/every-15-minutes.sh
 */30 * * * * /home/roberto/github/scripts/cron/every-30-minutes.sh
 0 *0/12 * * * /home/roberto/github/scripts/cron/twice-daily.sh
