@@ -62,7 +62,7 @@ find $H -type f -exec chmod 664 {} \;
 a2ensite ${U}.conf
 
 # added let's encrypt ssl to domain
-certbot-auto --apache -d $1 -d www.$1
+#certbot-auto --apache -d $1 -d www.$1
 
 # reload apache
 service apache2 reload
