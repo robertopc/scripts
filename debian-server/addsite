@@ -30,10 +30,10 @@ echo """<VirtualHost *:80>
     DocumentRoot $H/html
     ErrorLog $H/logs/error.log
     CustomLog $H/logs/access.log combined
-    RewriteEngine on
-    RewriteCond %{SERVER_NAME} =$1 [OR]
-    RewriteCond %{SERVER_NAME} =www.$1
-    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
+    #RewriteEngine on
+    #RewriteCond %{SERVER_NAME} =$1 [OR]
+    #RewriteCond %{SERVER_NAME} =www.$1
+    #RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
 </VirtualHost>
 
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
