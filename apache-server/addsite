@@ -44,12 +44,17 @@ echo """<VirtualHost *:80>
 """ > /etc/apache2/sites-available/$U.conf
 
 # add hello world page
-echo """<html>
+echo """<!DOCTYPE html>
+<html>
 <head>
     <title>Hello World $U</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<div style="text-align:center">
     <h1>Hello World $1!!!</h1>
+</div>
 </body>
 </html>""" > $H/html/index.html
 
