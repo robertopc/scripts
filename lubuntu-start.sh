@@ -30,6 +30,10 @@ find ~/github/dotfiles/ -type f -name '.*' -exec ln -s {} ~/ \; # mk symlinks
 # Link Fonts
 ln -s fontes .fonts
 
+# Add repositories
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
 # Cli apps
 echo "Installing CLI apps..."
 sudo apt-get install pulseaudio -y -qq	    # audio
@@ -131,8 +135,7 @@ sudo apt-get install kpcli -y -qq		# keepassx cli
 
 sudo apt-get install lynx -y -qq # require funcoeszz
 
-# java 9
-sudo apt-get install -y -qq openjdk-9-jre
+sudo apt-get install oracle-java8-installer -y -qq # java 8
 
 # Cerebro App Launcher
 curl https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
