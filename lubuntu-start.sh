@@ -131,6 +131,9 @@ sudo apt-get install kpcli -y -qq		# keepassx cli
 
 sudo apt-get install lynx -y -qq # require funcoeszz
 
+# java 9
+sudo apt-get install -y -qq openjdk-9-jre
+
 # Cerebro App Launcher
 curl https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
 sudo dpkg -i cerebro_0.3.1_amd64.deb
