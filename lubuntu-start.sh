@@ -151,6 +151,10 @@ bash ~/scripts/install-netbeans.sh
 # Pycharm IDE
 bash ~/scripts/install-pycharm.sh
 
+# Skype
+wget https://repo.skype.com/latest/skypeforlinux-64.deb
+dpkg -i skypeforlinux-64.deb
+
 # Atom IDE
 # wget https://atom.io/download/deb
 # mv deb atom-amd64.deb
