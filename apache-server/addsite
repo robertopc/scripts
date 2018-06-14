@@ -1,0 +1,80 @@
+#!/bin/bash
+
+if [[ $USER != "root" ]]; then
+  echo "ERROR: use addsite with super user"
+  exit
+fi
+
+
+if [[ $1 == "" ]]; then
+
+  echo "Usage: addsite example.com"
+else
+
+  U=`echo $1 | sed 's/\.//g'` # site user
+  H="/home/$U" # home folder
+
+  echo "Adding site $1..."
+
+  # cria o usuário
+  adduser $U --ingroup www-data --system
+
+  # cria pastas
+  mkdir $H/html
+  mkdir $H/logs
+
+  # cria os logs
+  touch $H/logs/access.log
+  touch $H/logs/error.log
+
+echo """<VirtualHost *:80>
+    ServerName $1
+    ServerAlias www.$1
+    ServerAdmin robertopc.prog@gmail.com
+    DocumentRoot $H/html
+    ErrorLog $H/logs/error.log
+    CustomLog $H/logs/access.log combined
+    #RewriteEngine on
+    #RewriteCond %{SERVER_NAME} =$1 [OR]
+    #RewriteCond %{SERVER_NAME} =www.$1
+    #RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+""" > /etc/apache2/sites-available/$U.conf
+
+# add hello world page
+echo """<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World $U</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div style="text-align:center">
+    <h1>Hello World $1!!!</h1>
+</div>
+</body>
+</html>""" > $H/html/index.html
+
+# altera permissoes
+chown -R $U:www-data $H
+
+# add permission 775 to folders
+find $H -type d -exec chmod 775 {} \;
+
+# add permission 664 to files
+find $H -type f -exec chmod 664 {} \;
+
+# enabled site in apache
+a2ensite ${U}.conf
+
+# added let's encrypt ssl to domain
+#certbot-auto --apache -d $1 -d www.$1
+
+# reload apache
+service apache2 reload
+fi
+
+
