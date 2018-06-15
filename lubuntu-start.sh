@@ -64,15 +64,16 @@ sudo apt-get install kdenlive -y -qq	        # video editor
 sudo apt-get install audacity -y -qq	        # sound editor
 
 echo "Installing Programing Tools..."
-sudo apt-get install sqliteman -y -qq	  	# SQLite
-sudo apt-get install pgadmin3 -y -qq		# PostgreSQL
-sudo apt-get install apache2 -y -qq		# http server
-sudo apt-get install php7.0 -y -qq		# php7
-sudo apt-get install php7.0-cli -y -qq		# php7 for cli
-sudo apt-get install php7.0-curl -y -qq		# php7 curl lib
-sudo apt-get install mysql-server -y -qq	# mysql
-sudo apt-get install python3-pip -y -qq		# python3 package manager
-sudo apt-get install python3-virtualenv -y -qq	# python3 virtual environment
+sudo apt-get install sqliteman -y -qq	  	  # SQLite
+sudo apt-get install pgadmin3 -y -qq		  # PostgreSQL
+sudo apt-get install apache2 -y -qq	   	  # http server
+sudo apt-get install php7.0 -y -qq		  # php7
+sudo apt-get install php7.0-cli -y -qq		  # php7 for cli
+sudo apt-get install php7.0-curl -y -qq		  # php7 curl lib
+sudo apt-get install libapache2-mod-php7.0 -y -qq # php7 apache module
+sudo apt-get install mysql-server -y -qq	  # mysql
+sudo apt-get install python3-pip -y -qq		  # python3 package manager
+sudo apt-get install python3-virtualenv -y -qq	  # python3 virtual environment
 
 # ruby-install
 wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz
