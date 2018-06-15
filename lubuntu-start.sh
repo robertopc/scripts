@@ -74,7 +74,11 @@ sudo apt-get install libapache2-mod-php7.0 -y -qq # php7 apache module
 sudo apt-get install mysql-server -y -qq	  # mysql
 sudo apt-get install python3-pip -y -qq		  # python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	  # python3 virtual environment
-sudo apt-get install zram-config -y -qq		# zram 
+sudo apt-get install zram-config -y -qq		  # zram 
+
+# Apache2 start config
+sudo a2enmod rewrit
+sudo service apache2 restart
 
 # ruby-install
 wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz
