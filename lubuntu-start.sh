@@ -69,6 +69,7 @@ sudo apt-get install apache2 -y -qq	   	  # http server
 sudo apt-get install php7.0 -y -qq		  # php7
 sudo apt-get install php7.0-cli -y -qq		  # php7 for cli
 sudo apt-get install php7.0-curl -y -qq		  # php7 curl lib
+sudo apt-get install php7.0-mysql -y -qq	  # php7 mysql driver
 sudo apt-get install libapache2-mod-php7.0 -y -qq # php7 apache module
 sudo apt-get install mysql-server -y -qq	  # mysql
 sudo apt-get install python3-pip -y -qq		  # python3 package manager
