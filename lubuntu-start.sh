@@ -12,10 +12,6 @@ mkdir github
 cd github
 git clone git@github.com:/robertopc/dotfiles
 git clone git@github.com:/robertopc/scripts
-
-# instalo o vundle para o vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 ln -s ~/github/dotfiles ~
 ln -s ~/github/scripts ~
 
@@ -52,6 +48,9 @@ sudo apt-get install screenfetch -y -qq	    # The Bash Screenshot Information To
 sudo apt-get install rar -y -qq		    # rar
 sudo apt-get install build-essential -y -qq # build tools
 
+# instalo o vundle para o vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 echo "Installing Browsers..."
 sudo apt-get install firefox -y -qq		# web browser
 sudo apt-get install chromium-browser -y -qq	# web browser
@@ -74,6 +73,7 @@ sudo apt-get install libapache2-mod-php7.0 -y -qq # php7 apache module
 sudo apt-get install mysql-server -y -qq	  # mysql
 sudo apt-get install python3-pip -y -qq		  # python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	  # python3 virtual environment
+sudo apt-get install zram-config -y -qq		# zram 
 
 # ruby-install
 wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz
