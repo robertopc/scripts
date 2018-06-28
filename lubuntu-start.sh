@@ -46,7 +46,11 @@ sudo apt-get install multitail -y -qq	    # multi tail
 sudo apt-get install inxi -y -qq	    # show hardware information
 sudo apt-get install screenfetch -y -qq	    # The Bash Screenshot Information Tool
 sudo apt-get install rar -y -qq		    # rar
-sudo apt-get install build-essential -y -qq # build tools
+sudo apt-get install build-essential -y -qq # essential tools
+sudo apt-get install figlet -y -qq	    # echo stylized text 
+sudo apt-get install cowsay -y -qq	    # cow saying anything
+sudo apt-get install fortune -y -qq	    # show random phrase
+
 
 # instalo o vundle para o vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
