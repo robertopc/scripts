@@ -130,6 +130,7 @@ sudo apt-get install virtualbox -y -qq	        # virtual machines
 sudo apt-get install terminator -y -qq		# terminal emulator
 sudo apt-get install typecatcher -y -qq		# search google fonts
 sudo apt-get install clipit -y -qq		# clipboard
+sudo apt-get install xpad -y -qq		# notepad
 sudo apt-get install transmission -y -qq	# torrent
 sudo apt-get install keepassx -y -qq		# password manager
 sudo apt-get install gnome-terminal -y -qq	# steam requeriment
