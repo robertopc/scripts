@@ -20,9 +20,6 @@ cd ~
 # Download fonts backup
 git clone git@github.com:/robertopc/fontes
 
-# Link Dotfiles
-find ~/github/dotfiles/ -type f -name '.*' -exec ln -s {} ~/ \; # mk symlinks
-
 # Link Fonts
 ln -s fontes .fonts
 
@@ -163,8 +160,12 @@ bash ~/scripts/install-netbeans.sh
 bash ~/scripts/install-pycharm.sh
 
 # Skype
-wget https://repo.skype.com/latest/skypeforlinux-64.deb
-dpkg -i skypeforlinux-64.deb
+SKIP="n"
+read -p "Skip? (Y/n) " SKIP
+if [ $SKIP == "n" ]; then
+  wget https://repo.skype.com/latest/skypeforlinux-64.deb
+  dpkg -i skypeforlinux-64.deb
+fi
 
 # Atom IDE
 # wget https://atom.io/download/deb
