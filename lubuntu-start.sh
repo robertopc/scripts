@@ -48,6 +48,7 @@ sudo apt-get install figlet -y -qq	    # echo stylized text
 sudo apt-get install cowsay -y -qq	    # cow saying anything
 sudo apt-get install fortune -y -qq	    # show random phrase
 sudo apt-get install cmatrix -y -qq	    # matrix terminal
+sudo apt-get install whois -y -qq	    # whois
 
 # instalo o vundle para o vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
