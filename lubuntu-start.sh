@@ -17,6 +17,9 @@ ln -s ~/github/scripts ~
 
 cd ~
 
+# cria os links para os bin's
+find bin/ -type f -exec ln -s ~/scripts/{} ~/bin \;
+
 # Download fonts backup
 git clone git@github.com:/robertopc/fontes
 
