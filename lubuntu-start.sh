@@ -82,7 +82,7 @@ sudo apt-get install python3-virtualenv -y -qq	  # python3 virtual environment
 sudo apt-get install zram-config -y -qq		  # zram 
 
 # Apache2 start config
-sudo a2enmod rewrit
+sudo a2enmod rewrite
 sudo service apache2 restart
 
 # ruby-install
@@ -97,11 +97,12 @@ cd ..
 sudo pip3 install asciinema
 sudo pip3 install virtualenvwrapper
 
-# install current nodejs
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install nodejs -y -qq
+# install node version manager
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+# install latest nodejs version and npm
+nvm install node
+nvm alias default node
 
-# npm packages
 sudo npm install -g gitbook-cli
 sudo npm install -g sub-tv
 
