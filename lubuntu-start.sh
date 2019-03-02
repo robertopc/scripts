@@ -145,14 +145,11 @@ sudo apt-get install vokoscreen -y -qq		# screencast
 sudo apt-get install font-manager -y -qq	# font manager
 sudo apt-get install keepassx -y -qq		# password manager
 sudo apt-get install kpcli -y -qq		# keepassx cli
+sudo apt-get install synapse -y -qq		# desktop tool
 
 sudo apt-get install lynx -y -qq # require funcoeszz
 
 sudo apt-get install oracle-java8-installer -y -qq # java 8
-
-# Cerebro App Launcher
-curl https://github.com/KELiON/cerebro/releases/download/v0.3.1/cerebro_0.3.1_amd64.deb
-sudo dpkg -i cerebro_0.3.1_amd64.deb
 
 # Steam
 curl https://steamcdn-a.akamaihd.net/client/installer/steam.deb
@@ -172,7 +169,3 @@ if [ $SKIP == "n" ]; then
   dpkg -i skypeforlinux-64.deb
 fi
 
-# Atom IDE
-# wget https://atom.io/download/deb
-# mv deb atom-amd64.deb
-# sudo dpkg -i atom-amd64.deb
