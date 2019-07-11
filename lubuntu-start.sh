@@ -7,6 +7,9 @@
 # if [ $SKIP == "n" ]; then
 # fi
 
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add - 
+echo 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
+
 cd ~
 mkdir github
 cd github
@@ -80,6 +83,7 @@ sudo apt-get install mysql-server -y -qq	  # mysql
 sudo apt-get install python3-pip -y -qq		  # python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	  # python3 virtual environment
 sudo apt-get install zram-config -y -qq		  # zram 
+sudo apt-get install codium -y -qq                # vscodium
 
 # Apache2 start config
 sudo a2enmod rewrite
