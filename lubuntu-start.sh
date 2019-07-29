@@ -155,6 +155,7 @@ sudo apt-get install lynx -y -qq # require funcoeszz
 
 sudo apt-get install oracle-java8-installer -y -qq # java 8
 
+sudo apt-get install snapd -y -qq # snap packages
 sudo apt-get install snapcraft -y -qq # snap packages
 sudo snap install spotify
 sudo snap install postman
