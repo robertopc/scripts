@@ -74,16 +74,16 @@ echo "Installing Programing Tools..."
 sudo apt-get install sqliteman -y -qq	  	  # SQLite
 sudo apt-get install pgadmin3 -y -qq		  # PostgreSQL
 sudo apt-get install apache2 -y -qq	   	  # http server
-sudo apt-get install php7.0 -y -qq		  # php7
-sudo apt-get install php7.0-cli -y -qq		  # php7 for cli
-sudo apt-get install php7.0-curl -y -qq		  # php7 curl lib
-sudo apt-get install php7.0-mysql -y -qq	  # php7 mysql driver
-sudo apt-get install libapache2-mod-php7.0 -y -qq # php7 apache module
+sudo apt-get install php7.2 -y -qq		  # php7
+sudo apt-get install php7.2-cli -y -qq		  # php7 for cli
+sudo apt-get install php7.2-curl -y -qq		  # php7 curl lib
+sudo apt-get install php7.2-mysql -y -qq	  # php7 mysql driver
+sudo apt-get install libapache2-mod-php7.2 -y -qq # php7 apache module
 sudo apt-get install mysql-server -y -qq	  # mysql
 sudo apt-get install python3-pip -y -qq		  # python3 package manager
 sudo apt-get install python3-virtualenv -y -qq	  # python3 virtual environment
 sudo apt-get install zram-config -y -qq		  # zram 
-sudo apt-get install codium -y -qq                # vscodium
+sudo apt-get install composer -y -qq              # composer
 
 # Apache2 start config
 sudo a2enmod rewrite
