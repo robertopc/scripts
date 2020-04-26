@@ -1,0 +1,6 @@
+#!/bin/bash
+arquivo=wp_vagasriobr-`date --iso-8601`
+cd /root/backups
+mysqldump --add-drop-table -u root -h localhost -pPin@#ky wp_vagasriobr > ${arquivo}.sql
+tar cjf ${arquivo}.tgz /home/vagasriobr/html ${arquivo}.sql
+find /root/backups/ -ctime +7 -delete
