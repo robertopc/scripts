@@ -1,0 +1,4 @@
+image_id=${1}
+
+docker images -a -q --filter since=$image_id |
+xargs docker inspect --format='{{.Id}} {{.Parent}}'
