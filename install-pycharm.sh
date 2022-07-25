@@ -2,11 +2,11 @@
 
 read -p "Instalar o PyCharm? (y/N) " RESPOSTA
 
-if [ $RESPOSTA == 'y' ]; then
-  # https://download-cf.jetbrains.com/python/pycharm-community-2017.3.2.tar.gz
-  SUM="06fbe5ffca6e27842ba71ac62eba76a976f3ee2651568e151c59482ed486e4f6"
-  FILENAME="pycharm-community-2017.3.2.tar.gz"
+if [[ $RESPOSTA == 'y' ]]; then
+  SUM="f89ee50c81145c2775ba17253e5b847d4d7b7bbdd5981032d6e397b111686eb1"
+  FILENAME="pycharm-community-2022.1.4.tar.gz"
   URL="https://download-cf.jetbrains.com/python/$FILENAME"
+  curl $URL -o /tmp/$FILENAME
   # enquanto o arquivo nao for baixado ou
   # estiver corrompido, repita
   while true; do
@@ -21,12 +21,12 @@ if [ $RESPOSTA == 'y' ]; then
       fi
     fi
     echo "Baixando..."
-    curl $URL > $FILENAME
+    curl $URL -o /tmp/$FILENAME
   done
   # instalando...
   echo "Instalando..."
-  tar xzf $FILENAME
+  tar xzf /tmp/$FILENAME
   DIR=`echo $FILENAME | sed 's/\.tar\.gz//'`
-  bash $DIR/bin/pycharm.sh &
+  bash /tmp/$DIR/bin/pycharm.sh &
 fi
 
