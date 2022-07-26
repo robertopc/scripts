@@ -1,0 +1,10 @@
+if [ -z $1 ]; then
+echo "usage: $0 <file-to-be-removed> [path]"
+exit
+fi
+if [ ! -z $2 ];then
+cd $2
+fi
+git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch $1" HEAD
+git update-ref -d refs/original/refs/heads/master
+git push -f
