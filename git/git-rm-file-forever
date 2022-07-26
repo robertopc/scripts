@@ -4,7 +4,7 @@
 # https://daily-dev-tips.com/posts/removing-a-env-file-from-git-history/
 
 # reference 2
-https://stackoverflow.com/questions/6403601/purging-file-from-git-repo-failed-unable-to-create-new-backup
+# https://stackoverflow.com/questions/6403601/purging-file-from-git-repo-failed-unable-to-create-new-backup
 
 if [ -z $1 ]; then
 echo "usage: $0 <file-to-be-removed> [path]"
