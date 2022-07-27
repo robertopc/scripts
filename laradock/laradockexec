@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dir=$(basename `pwd`)
+cd laradock
+docker exec --user=laradock -it ${dir}_workspace_1 bash
