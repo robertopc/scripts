@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo mv /etc/cron.d/crontab /etc/cron.d/crontab.bak
+sudo ln ~/bin/cron/crontab /etc/cron.d/crontab

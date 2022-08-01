@@ -7,16 +7,16 @@
 #  m  h dom mon dow
 SHELL=/bin/bash
 MAILTO=robertopc.prog@gmail.com
-* * * * * /home/roberto/github/scripts/cron/every-minute.sh
-0 0 * * * /home/roberto/github/scripts/cron/every-midnight.sh
-0 12 * * * /home/roberto/github/scripts/cron/every-midday.sh
-*/15 * * * * /home/roberto/github/scripts/cron/every-15-minutes.sh
-*/30 * * * * /home/roberto/github/scripts/cron/every-30-minutes.sh
-0 *0/12 * * * /home/roberto/github/scripts/cron/twice-daily.sh
-0 */8 * * * /home/roberto/github/scripts/cron/thrice-daily.sh
-0 0 */3 * * /home/roberto/github/scripts/cron/every-3-days-at-midnight.sh
-0 0 1 * * /home/roberto/github/scripts/cron/every-month.sh
-0 0 1 */3 * /home/roberto/github/scripts/cronevery-3-months.sh
+* * * * * ~/bin/cron/every-minute.sh
+0 0 * * * ~/bin/cron/every-midnight.sh
+0 12 * * * ~/bin/cron/every-midday.sh
+*/15 * * * * ~/bin/cron/every-15-minutes.sh
+*/30 * * * * ~/bin/cron/every-30-minutes.sh
+0 *0/12 * * * ~/bin/cron/twice-daily.sh
+0 */8 * * * ~/bin/cron/thrice-daily.sh
+0 0 */3 * * ~/bin/cron/every-3-days-at-midnight.sh
+0 0 1 * * ~/bin/cron/every-month.sh
+0 0 1 */3 * ~/bin/cronevery-3-months.sh
 @hourly echo "@hourly run at `date`" >> ~/cron.log
 @daily echo "@daily run at `date`" >> ~/cron.log
 @reboot echo "@reboot run at `date`" >> ~/cron.log

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# help message
+if [ $1 == "--help" ]; then
+file=`basename $0`
+echo "$file - enter in a container to exec commands"
+exit
+fi
+
+if [ !-f laradock ]; then
+echo "$0 - no laradock found"
+exit
+fi
+
+dir=$(basename `pwd`)
+cd laradock
+docker exec --user=laradock -it ${dir}_workspace_1 bash

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# help message
+if [ $1 == "--help" ]; then
+file=`basename $0`
+echo "$file - up a laradock project"
+exit
+fi
+
+if [ !-f laradock ]; then
+echo "$0 - no laradock found"
+exit
+fi
+
+cd laradock
+docker-compose up -d nginx mysql adminer

@@ -1,9 +1,15 @@
 #!/bin/bash
 
-if [ -f ../docker/docker-stop-all ]; then
-. ../docker/docker-stop-all
+# help message
+if [ $1 == "--help" ]; then
+file=`basename $0`
+echo "$file - start a new laravel project with laradock"
+exit
 fi
-dir=$(basename `pwd`)
+
+if [ -f ../docker/docker-stop-all ]; then
+. docker-stop-all
+fi
 git clone https://github.com/laravel/laravel
 read -p "Project name? [laravel] " projectname
 if [ ! -z $projectname ]; then
@@ -24,7 +30,7 @@ cp .env.example .env
 sed -i "s/COMPOSE_PROJECT_NAME=laradock/COMPOSE_PROJECT_NAME=${projectname}/" .env
 sed -i 's/PHP_VERSION=.*/PHP_VERSION=8.1/' .env
 docker-compose up -d nginx mysql adminer
-docker exec --user=laradock -t ${projectname}_workspace_1 composer install 
+docker exec --user=laradock -t ${projectname}_workspace_1 composer install
 docker exec --user=laradock -t ${projectname}_workspace_1 php artisan key:generate
 docker exec --user=laradock -t ${projectname}_workspace_1 php artisan migrate
 cd ..
