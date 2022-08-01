@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# help message
-if [ $1 == "--help" ]; then
 file=`basename $0`
+
+# help message
+if [ "$1" == "--help" ]; then
 echo "$file - put down a laradock project"
 exit
 fi
 
-if [ !-f laradock ]; then
-echo "$0 - no laradock found"
+if [ ! -d laradock ]; then
+echo "$file - no laradock found"
 exit
 fi
 

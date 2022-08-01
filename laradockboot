@@ -7,7 +7,7 @@ echo "$file - start a new laravel project with laradock"
 exit
 fi
 
-if [ -f ../docker/docker-stop-all ]; then
+if [ -f docker-stop-all ]; then
 . docker-stop-all
 fi
 git clone https://github.com/laravel/laravel
