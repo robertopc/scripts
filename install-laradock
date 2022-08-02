@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for f in `ls laradock-scripts/laradock*`; do
+  if [ ! -e $f ]; then
+    echo "Created link to -> $f"
+    ln -s $f .
+  fi
+done
+
