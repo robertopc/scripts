@@ -1,0 +1,3 @@
+[submodule "laradock-scripts"]
+	path = laradock-scripts
+	url = https://github.com/robertopc/laradock-scripts
