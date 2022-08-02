@@ -1,9 +1,12 @@
 #!/bin/bash
 
 for f in `ls laradock-scripts/laradock*`; do
-  if [ ! -e $f ]; then
+  file=`basename $f`
+  if [ ! -e $file ]; then
     echo "Created link to -> $f"
     ln -s $f .
+  else
+    echo "File $file already exists"
   fi
 done
 
