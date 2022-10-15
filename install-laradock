@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for f in `ls laradock-scripts/laradock*`; do
+for f in `ls ~/github/laradock-scripts/laradock*`; do
   file=`basename $f`
   if [ ! -e $file ]; then
     echo "Created link to -> $f"
