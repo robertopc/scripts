@@ -1,0 +1,120 @@
+#!/bin/bash
+
+# Docker Adminer color theme chooser
+# Gist: https://gist.github.com/robertopc/5b825813e501d07d38d463693de00587
+
+# if not passed color, show the menu with colors
+if [ -z "$1" ]; then
+
+printf "ADMINER DOCKER SCRIPT
+
+Available colors: 
+1  - light blue
+2  - light brown
+3  - light green
+4  - light purple
+5  - light red
+6  - light turquoise
+7  - light gray-orange
+8  - dark blue
+9  - dark brown
+10 - dark green
+11 - dark red
+12 - dark turquoise
+13 - dark yellow
+
+Input the color choose number:"
+read OPTION
+
+case $OPTION in
+1) 
+COLOR=blue
+LUMINOSITY=light
+;;
+2) 
+COLOR=brown
+LUMINOSITY=light
+;;
+3) 
+COLOR=green
+LUMINOSITY=light
+;;
+4) 
+COLOR=purple
+LUMINOSITY=light
+;;
+5) 
+COLOR=red
+LUMINOSITY=light
+;;
+6) 
+COLOR=turquoise
+LUMINOSITY=light
+;;
+7) 
+COLOR=gray-orange
+LUMINOSITY=light
+;;
+8) 
+COLOR=blue
+LUMINOSITY=dark
+;;
+9) 
+COLOR=brown
+LUMINOSITY=dark
+;;
+10) 
+COLOR=green
+LUMINOSITY=dark
+;;
+11) 
+COLOR=red
+LUMINOSITY=dark
+;;
+12) 
+COLOR=turquoise
+LUMINOSITY=dark
+;;
+13) 
+COLOR=yellow
+LUMINOSITY=dark
+;;
+*) 
+COLOR=green
+LUMINOSITY=light
+;;
+esac
+
+else
+COLOR="$1"
+LUMINOSITY="$2"
+fi
+
+docker rm -f adminer
+
+
+mkdir tmp &2>/dev/null
+
+URL=https://www.rmsoft.sk/rmsoft/_all/portfolio/programming-work/web-services/theme-for-adminer/download/theme_with_icons/theme_$LUMINOSITY/$COLOR/adminer.zip
+
+# download the theme
+curl -s $URL --output tmp/adminer-$COLOR.zip
+
+# check if the file was downloaded
+if [ ! -s tmp/adminer-$COLOR.zip ]; then
+    echo "ERRO: Adminer not downloaded"
+    exit
+else
+    echo "Downloading adminer-$COLOR.zip from $URL..."
+    sleep 3
+fi
+
+cd tmp
+unzip -qo adminer-$COLOR.zip
+
+docker run -d --restart always --net host --name adminer adminer
+
+# copy the theme to container
+docker cp adminer.css adminer:/var/www/html
+
+rm adminer*
