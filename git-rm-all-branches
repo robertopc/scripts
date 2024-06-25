@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Obtenha a lista de branches locais, excluindo main e master
+branches=$(git branch | grep -v "main" | grep -v "master")
+
+# Verifique se há branches para excluir
+if [ -z "$branches" ]; then
+  echo "Não há branches para remover."
+  exit 0
+fi
+
+# Remova cada branch listado
+echo "Removendo branches locais exceto 'main' e 'master'..."
+for branch in $branches; do
+  git branch -d $branch
+done
+
+echo "Branches removidos com sucesso."
